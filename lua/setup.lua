@@ -1,6 +1,5 @@
 local bindings =  require("keymap")
 
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -20,6 +19,8 @@ vim.opt.smartindent = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
+vim.opt.smartcase = true
+
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
 
@@ -33,6 +34,7 @@ vim.opt.visualbell = true
 
 vim.opt.clipboard = "unnamed"
 
+
 vim.opt.backup = false
 vim.opt.writebackup= false
 
@@ -40,9 +42,7 @@ vim.opt.grepprg="rg --vimgrep --smart-case --follow"
 vim.opt.runtimepath = vim.opt.runtimepath + "/opt/homebrew/bin/fzf"
 
 vim.opt.signcolumn = "yes"
---vim.opt.colorcolumn = "80"
 
-vim.cmd("colorscheme dracula-soft")
 vim.cmd[[
 highlight Cursor guifg=white guibg=steelblue
 :set nocursorcolumn
@@ -61,7 +61,6 @@ let g:rainbow_active = 1
 let g:rustfmt_autosave = 0
 let g:python3_host_prog="/usr/local/bin/python3"
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-
 let g:typst_pdf_viewer='sioyek'
 ]]
 
@@ -73,9 +72,7 @@ bindings.nmap("<SPACE>", "<Nop>")
 bindings.nnoremap("<c-z>", "<nop>")
 vim.g.mapleader = " "
 
-bindings.nnoremap("<leader>pv", "<cmd>Ex<CR>")
 bindings.nmap( "<leader>*", ":TagbarToggle<CR>")
-bindings.nnoremap(";f", ":Neoformat")
 
 -- C-p: FZF find files
 bindings.nmap("<C-f>", "<Nop>")
@@ -87,7 +84,6 @@ bindings.nnoremap("<leader>F", ":NvimTreeClose<CR>")
 -- C-g: FZF ('g'rep)/find in files
 bindings.nnoremap("<C-g>", ":Rg<CR>")
 
-
 bindings.nnoremap("<leader>t", ":VimuxTogglePane<CR>")
 
 -- insert mode
@@ -98,4 +94,3 @@ bindings.imap("<C-l>", "<Right>")
 
 --refactoring
 bindings.nnoremap("<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>" )
-

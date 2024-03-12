@@ -1,27 +1,29 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
-
-    use 'morhetz/gruvbox'
-
 
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    ------------------ visual stuff ------------------
-    use 'Mofiqul/dracula.nvim'
-    use 'luochen1990/rainbow'
-    use {'nvim-lualine/lualine.nvim'}
+    use "nvim-lua/plenary.nvim"
 
-    ------------------ fzf -----------------
-    use 'junegunn/fzf'
+    ------------------ visual stuff ------------------
+    use "ellisonleao/gruvbox.nvim"
+    use 'Mofiqul/dracula.nvim'
+    use 'frazrepo/vim-rainbow'
+    use 'nvim-lualine/lualine.nvim'
+
+    ------------------ editor -----------------
+    use 'junegunn/fzf' --fuzzy search
     use 'junegunn/fzf.vim'
 
+    use 'preservim/vimux' --tmux support
+    use 'nvim-tree/nvim-tree.lua' --file tree
+    use 'lukas-reineke/indent-blankline.nvim'
+
+
     ------------------ completion and linting -----------------
+
     use 'neovim/nvim-lspconfig'
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
     use {
         'hrsh7th/nvim-cmp',
@@ -36,29 +38,28 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- language specific stuff
     use 'rust-lang/rust.vim'
+    use {'kaarmu/typst.vim', ft = {'typst'}}
 
 
     ------------------ qol ------------------
     use 'tpope/vim-surround'   -- better surrounding chars
     use 'tpope/vim-commentary' -- comment/uncomment
-    use 'tpope/vim-dispatch'--async compiling
+    use "Xiloscient/snippets"
+    use 'folke/flash.nvim'
 
     use 'ntpeters/vim-better-whitespace' -- whitespace cleanup
     use 'windwp/nvim-autopairs' --bracket pair generation
+
     use 'preservim/tagbar'
 
-    use 'easymotion/vim-easymotion' -- better motions
-    use 'tpope/vim-fugitive' --git support
 
-    use 'preservim/vimux' --tmux support
 
-    use 'sbdchd/neoformat'
+    ------------------ git ------------------
+    use "kdheepak/lazygit.nvim"
+    use "lewis6991/gitsigns.nvim"
+    use 'tpope/vim-fugitive'
 
-    use "Xiloscient/snippets"
+    use 'ThePrimeagen/vim-be-good'
 
-    use 'nvim-tree/nvim-tree.lua'
-    use 'nvim-tree/nvim-web-devicons.lua'
-    use {'kaarmu/typst.vim', ft = {'typst'}}
  end)

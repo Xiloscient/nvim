@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/xilo/.cache/nvim/packer_hererocks/2.1.1700008891/share/lua/5.1/?.lua;/Users/xilo/.cache/nvim/packer_hererocks/2.1.1700008891/share/lua/5.1/?/init.lua;/Users/xilo/.cache/nvim/packer_hererocks/2.1.1700008891/lib/luarocks/rocks-5.1/?.lua;/Users/xilo/.cache/nvim/packer_hererocks/2.1.1700008891/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/xilo/.cache/nvim/packer_hererocks/2.1.1700008891/lib/lua/5.1/?.so"
+local package_path_str = "/Users/xilo/.cache/nvim/packer_hererocks/2.1.1703358377/share/lua/5.1/?.lua;/Users/xilo/.cache/nvim/packer_hererocks/2.1.1703358377/share/lua/5.1/?/init.lua;/Users/xilo/.cache/nvim/packer_hererocks/2.1.1703358377/lib/luarocks/rocks-5.1/?.lua;/Users/xilo/.cache/nvim/packer_hererocks/2.1.1703358377/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/xilo/.cache/nvim/packer_hererocks/2.1.1703358377/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/dracula.nvim",
     url = "https://github.com/Mofiqul/dracula.nvim"
   },
+  ["flash.nvim"] = {
+    loaded = true,
+    path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/flash.nvim",
+    url = "https://github.com/folke/flash.nvim"
+  },
   fzf = {
     loaded = true,
     path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/fzf",
@@ -114,20 +119,30 @@ _G.packer_plugins = {
     path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
-  gruvbox = {
+  ["gitsigns.nvim"] = {
     loaded = true,
-    path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/morhetz/gruvbox"
+    path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["lazygit.nvim"] = {
+    loaded = true,
+    path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
-  neoformat = {
-    loaded = true,
-    path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/neoformat",
-    url = "https://github.com/sbdchd/neoformat"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -149,20 +164,20 @@ _G.packer_plugins = {
     path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
-  ["nvim-web-devicons.lua"] = {
+  ["nvim-treesitter"] = {
     loaded = true,
-    path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/nvim-web-devicons.lua",
-    url = "https://github.com/nvim-tree/nvim-web-devicons.lua"
+    path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  rainbow = {
+  ["plenary.nvim"] = {
     loaded = true,
-    path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/rainbow",
-    url = "https://github.com/luochen1990/rainbow"
+    path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["rust.vim"] = {
     loaded = true,
@@ -186,6 +201,11 @@ _G.packer_plugins = {
     path = "/Users/xilo/.local/share/nvim/site/pack/packer/opt/typst.vim",
     url = "https://github.com/kaarmu/typst.vim"
   },
+  ["vim-be-good"] = {
+    loaded = true,
+    path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/vim-be-good",
+    url = "https://github.com/ThePrimeagen/vim-be-good"
+  },
   ["vim-better-whitespace"] = {
     loaded = true,
     path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/vim-better-whitespace",
@@ -196,20 +216,15 @@ _G.packer_plugins = {
     path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
-  ["vim-dispatch"] = {
-    loaded = true,
-    path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/vim-dispatch",
-    url = "https://github.com/tpope/vim-dispatch"
-  },
-  ["vim-easymotion"] = {
-    loaded = true,
-    path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/vim-easymotion",
-    url = "https://github.com/easymotion/vim-easymotion"
-  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-rainbow"] = {
+    loaded = true,
+    path = "/Users/xilo/.local/share/nvim/site/pack/packer/start/vim-rainbow",
+    url = "https://github.com/frazrepo/vim-rainbow"
   },
   ["vim-surround"] = {
     loaded = true,

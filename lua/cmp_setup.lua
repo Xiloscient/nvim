@@ -18,11 +18,11 @@ cmp.setup({
           i = cmp.mapping.abort(),
           c = cmp.mapping.close(),
         }),
-      ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently elected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently elected item.
     },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'vsnip' }, 
+        { name = 'vsnip' },
       }, {
         { name = 'buffer' },
       })
