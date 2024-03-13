@@ -1,65 +1,60 @@
-return require('packer').startup(function(use)
+require('lazy').setup({
 
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
-
-    use "nvim-lua/plenary.nvim"
+    "nvim-lua/plenary.nvim",
 
     ------------------ visual stuff ------------------
-    use "ellisonleao/gruvbox.nvim"
-    use 'Mofiqul/dracula.nvim'
-    use 'frazrepo/vim-rainbow'
-    use 'nvim-lualine/lualine.nvim'
+    "ellisonleao/gruvbox.nvim",
+    'Mofiqul/dracula.nvim',
+    'frazrepo/vim-rainbow',
+    'nvim-lualine/lualine.nvim',
 
     ------------------ editor -----------------
-    use 'junegunn/fzf' --fuzzy search
-    use 'junegunn/fzf.vim'
+    'junegunn/fzf', --fuzzy search
+    'junegunn/fzf.vim',
 
-    use 'preservim/vimux' --tmux support
-    use 'nvim-tree/nvim-tree.lua' --file tree
-    use 'lukas-reineke/indent-blankline.nvim'
+    'preservim/vimux', --tmux support
+    'nvim-tree/nvim-tree.lua', --file tree
+    'lukas-reineke/indent-blankline.nvim',
 
 
     ------------------ completion and linting -----------------
 
-    use 'neovim/nvim-lspconfig'
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+    'neovim/nvim-lspconfig',
+    {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
 
-    use {
+    {
         'hrsh7th/nvim-cmp',
-        requires = {
-            use 'hrsh7th/cmp-nvim-lsp',
-            use 'hrsh7th/cmp-buffer',
-            use 'hrsh7th/cmp-path',
-            use 'hrsh7th/cmp-cmdline',
-            use 'hrsh7th/cmp-vsnip',
-            use 'hrsh7th/vim-vsnip', --snippet support,
-            use 'hrsh7th/vim-vsnip-integ', --snippet support
+	event = "InsertEnter",
+        dependencies = {
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-cmdline',
+            'hrsh7th/cmp-vsnip',
+            'hrsh7th/vim-vsnip', --snippet support,
+            'hrsh7th/vim-vsnip-integ', --snippet support
         }
-    }
+    },
 
-    use 'rust-lang/rust.vim'
-    use {'kaarmu/typst.vim', ft = {'typst'}}
+    'rust-lang/rust.vim',
 
 
     ------------------ qol ------------------
-    use 'tpope/vim-surround'   -- better surrounding chars
-    use 'tpope/vim-commentary' -- comment/uncomment
-    use "Xiloscient/snippets"
-    use 'folke/flash.nvim'
+    'tpope/vim-surround',   -- better surrounding chars
+    'tpope/vim-commentary', -- comment/uncomment
+    "Xiloscient/snippets",
+    'folke/flash.nvim',
 
-    use 'ntpeters/vim-better-whitespace' -- whitespace cleanup
-    use 'windwp/nvim-autopairs' --bracket pair generation
+    'ntpeters/vim-better-whitespace', -- whitespace cleanup
+    'windwp/nvim-autopairs', --bracket pair generation
 
-    use 'preservim/tagbar'
+    'preservim/tagbar',
 
 
 
     ------------------ git ------------------
-    use "kdheepak/lazygit.nvim"
-    use "lewis6991/gitsigns.nvim"
-    use 'tpope/vim-fugitive'
+    "kdheepak/lazygit.nvim",
+    "lewis6991/gitsigns.nvim",
+    'tpope/vim-fugitive'
 
-    use 'ThePrimeagen/vim-be-good'
-
- end)
+})
