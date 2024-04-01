@@ -14,7 +14,7 @@ require('lazy').setup({
 
     'preservim/vimux', --tmux support
     'nvim-tree/nvim-tree.lua', --file tree
-    'lukas-reineke/indent-blankline.nvim',
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
 
     ------------------ completion and linting -----------------
@@ -37,20 +37,18 @@ require('lazy').setup({
     },
 
     'rust-lang/rust.vim',
-
+    {'kaarmu/typst.vim', ft = 'typst', lazy=false},
 
     ------------------ qol ------------------
     'tpope/vim-surround',   -- better surrounding chars
     'tpope/vim-commentary', -- comment/uncomment
     "Xiloscient/snippets",
-    'folke/flash.nvim',
+    --'folke/flash.nvim',
 
     'ntpeters/vim-better-whitespace', -- whitespace cleanup
     'windwp/nvim-autopairs', --bracket pair generation
 
     'preservim/tagbar',
-
-
 
     ------------------ git ------------------
     "kdheepak/lazygit.nvim",
@@ -67,5 +65,4 @@ require('lazy').setup({
     },
 
     'tpope/vim-fugitive'
-
 })

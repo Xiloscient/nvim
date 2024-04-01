@@ -26,5 +26,3 @@ require('nvim-autopairs').setup()
 require("nvim-tree").setup()
 require('gitsigns').setup()
 require("ibl").setup()
-
-require("flash").treesitter()
