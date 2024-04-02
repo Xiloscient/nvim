@@ -20,9 +20,14 @@ require("lsp_setup")
 require("vsnip_setup")
 
 require'nvim-treesitter.configs'.setup { highlight = { enable = true }, indent = { enable = true } }
-require('lualine').setup{ options = { theme = 'gruvbox', icons_enabled = true } }
+require('lualine').setup{ options = { theme = 'gruvbox', icons_enabled = false } }
 
 require('nvim-autopairs').setup()
-require("nvim-tree").setup()
+require("nvim-tree").setup{ renderer = {icons = {show = {
+    file = false,
+    folder = false,
+    folder_arrow = false,
+}}}}
+
 require('gitsigns').setup()
 require("ibl").setup()
