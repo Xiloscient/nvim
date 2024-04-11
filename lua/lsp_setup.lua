@@ -118,13 +118,14 @@ require('lspconfig')['texlab'].setup {
   flags = lsp_flags,
   settings = {
     ['texlab'] = {
-      auxDirectory = ".",
       bibtexFormatter = "texlab",
       build = {
-        args = { "-pdf", "-interaction=nonstopmode", "-synctex=1"},
+        args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "-outdir=build"},
         executable = "latexmk",
+        auxDirectory = "build",
+        logDirectory = "build",
         forwardSearchAfter = true,
-        onSave = true
+        onSave = true,
       },
       chktex = {
         onEdit = false,
@@ -133,19 +134,8 @@ require('lspconfig')['texlab'].setup {
       diagnosticsDelay = 300,
       formatterLineLength = 80,
       forwardSearch = {
-        executable =  "sioyek",
-        args = {
-            "--reuse-window",
-            "--execute-command",
-            "toggle_synctex",
-            "--inverse-search",
-            "code -r -g \"%%1:%%2\"",
-            "--forward-search-file",
-            "%f",
-            "--forward-search-line",
-            "%l",
-            "%p",
-        },
+        executable = "/Applications/Skim.app/Contents/SharedSupport/displayline",
+        args = { "-r", "%l", "%p", "%f" }
       },
       latexFormatter = "latexindent",
       latexindent = {
