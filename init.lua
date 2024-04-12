@@ -31,3 +31,9 @@ require("nvim-tree").setup{ renderer = {icons = {show = {
 
 require('gitsigns').setup()
 require("ibl").setup()
+
+require("copilot_cmp").setup()
+require("copilot").setup({
+    suggestion = { enabled = false },
+    panel = { enabled = false },
+})

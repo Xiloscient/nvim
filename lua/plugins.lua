@@ -23,8 +23,7 @@ require('lazy').setup({
     {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
 
     {
-        'hrsh7th/nvim-cmp',
-	event = "InsertEnter",
+        'hrsh7th/nvim-cmp', event = "InsertEnter",
         dependencies = {
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-buffer',
@@ -33,6 +32,8 @@ require('lazy').setup({
             'hrsh7th/cmp-vsnip',
             'hrsh7th/vim-vsnip', --snippet support,
             'hrsh7th/vim-vsnip-integ', --snippet support
+            'zbirenbaum/copilot.lua',
+            'zbirenbaum/copilot-cmp',
         }
     },
 
