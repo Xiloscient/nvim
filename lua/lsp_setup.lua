@@ -80,7 +80,8 @@ require('lspconfig')['clangd'].setup {
         "--inlay-hints",
         "--header-insertion-decorators",
         "--function-arg-placeholders",
-        "--completion-style=detailed"
+        "--completion-style=detailed",
+        "--offset-encoding=utf-16"
     },
     filetypes = {"c", "cpp", "objc", "objcpp"},
     root_dir = require('lspconfig').util.root_pattern("src"),
