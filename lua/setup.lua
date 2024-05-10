@@ -57,7 +57,6 @@ highlight Cursor guifg=white guibg=steelblue
 vim.cmd [[
 let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutBackInsert = '<M-b>'
-let g:rainbow_active = 1
 let g:rustfmt_autosave = 0
 let g:python3_host_prog="/usr/local/bin/python3"
 let g:fzf_history_dir = '~/.local/share/fzf-history'

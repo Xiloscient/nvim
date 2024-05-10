@@ -27,6 +27,7 @@ require("nvim-tree").setup()
 
 require('gitsigns').setup()
 require("ibl").setup()
+require('nvim-highlight-colors').setup()
 
 require("copilot_cmp").setup()
 require("copilot").setup({

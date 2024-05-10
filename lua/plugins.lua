@@ -4,9 +4,9 @@ require('lazy').setup({
 
     ------------------ visual stuff ------------------
     "ellisonleao/gruvbox.nvim",
-    'Mofiqul/dracula.nvim',
-    'frazrepo/vim-rainbow',
     'nvim-lualine/lualine.nvim',
+    'hiphish/rainbow-delimiters.nvim',
+    'brenoprata10/nvim-highlight-colors',
 
     ------------------ editor -----------------
     'junegunn/fzf', --fuzzy search
