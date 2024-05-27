@@ -20,9 +20,11 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.smartcase = true
+vim.opt.ignorecase = true
 
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
+vim.opt.scrolloff = 7
 
 vim.opt.wrap = true
 
@@ -77,8 +79,7 @@ bindings.nmap( "<leader>*", ":TagbarToggle<CR>")
 bindings.nmap("<C-f>", "<Nop>")
 bindings.nnoremap("<C-f>", ":Files<CR>")
 
-bindings.nnoremap("<leader>f", ":NvimTreeFindFile<CR>")
-bindings.nnoremap("<leader>F", ":NvimTreeClose<CR>")
+bindings.nnoremap("<leader>f", ":NvimTreeFindFileToggle<CR>")
 
 -- C-g: FZF ('g'rep)/find in files
 bindings.nnoremap("<C-g>", ":Rg<CR>")

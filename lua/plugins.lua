@@ -6,7 +6,6 @@ require('lazy').setup({
     "ellisonleao/gruvbox.nvim",
     'nvim-lualine/lualine.nvim',
     'hiphish/rainbow-delimiters.nvim',
-    'brenoprata10/nvim-highlight-colors',
 
     ------------------ editor -----------------
     'junegunn/fzf', --fuzzy search
