@@ -1,18 +1,15 @@
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+local bindings =  require("keymap")
 
-local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', 'ge', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', 'gE', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+bindings.nnoremap('<space>e', vim.diagnostic.open_float)
+bindings.nnoremap('ge', vim.diagnostic.goto_prev)
+bindings.nnoremap('gE', vim.diagnostic.goto_next)
+bindings.nnoremap('<space>q', vim.diagnostic.setloclist)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client,bufnr)
-
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -25,7 +22,6 @@ local on_attach = function(client,bufnr)
   vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', '<leader>ff', vim.lsp.buf.formatting, bufopts)
 end
 
 local lsp_flags = {
@@ -136,7 +132,7 @@ require('lspconfig')['texlab'].setup {
       formatterLineLength = 80,
       forwardSearch = {
         executable = "/Applications/Skim.app/Contents/SharedSupport/displayline",
-        args = { "-r", "%l", "%p", "%f" }
+        args = { "-r", "%l", "/%p", "%f" }
       },
       latexFormatter = "latexindent",
       latexindent = {
