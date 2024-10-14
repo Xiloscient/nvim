@@ -4,6 +4,7 @@ require('lazy').setup({
 
     ------------------ visual stuff ------------------
     "ellisonleao/gruvbox.nvim",
+    "catppuccin/nvim",
     'nvim-lualine/lualine.nvim',
     'hiphish/rainbow-delimiters.nvim',
 

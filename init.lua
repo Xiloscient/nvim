@@ -30,7 +30,6 @@ require("ibl").setup()
 
 require("copilot_cmp").setup()
 require("copilot").setup({
-    suggestion = { enabled = false, },
     panel = { enabled = false, },
-    filetypes = { text = false, [""] = false,},
+    filetypes = { rust = true, python = true, ["*"] = false,},
 })

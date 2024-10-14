@@ -117,10 +117,8 @@ require('lspconfig')['texlab'].setup {
     ['texlab'] = {
       bibtexFormatter = "texlab",
       build = {
-        args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "-outdir=build"},
+        args = { "--shell-escape", "-pdf", "-interaction=nonstopmode", "-synctex=1"},
         executable = "latexmk",
-        auxDirectory = "build",
-        logDirectory = "build",
         forwardSearchAfter = true,
         onSave = true,
       },
