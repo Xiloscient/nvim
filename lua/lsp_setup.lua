@@ -31,10 +31,15 @@ local lsp_flags = {
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 require('lspconfig')['pyright'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
+  on_attach = on_attach,
+  flags = lsp_flags,
+  settings = {
+    python = {
+      disableOrganizeImports = true,
+      analysis = { typeCheckingMode = "off" }
+    }
+  }
 }
-
 
 local util = require 'lspconfig.util'
 local rust_cached_root_dir = nil
@@ -117,7 +122,7 @@ require('lspconfig')['texlab'].setup {
     ['texlab'] = {
       bibtexFormatter = "texlab",
       build = {
-        args = { "--shell-escape", "-pdf", "-interaction=nonstopmode", "-synctex=1"},
+        args = { "-shell-escape", "-pdf", "-interaction=nonstopmode", "-synctex=1"},
         executable = "latexmk",
         forwardSearchAfter = true,
         onSave = true,
