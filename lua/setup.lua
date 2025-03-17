@@ -45,16 +45,6 @@ vim.opt.runtimepath = vim.opt.runtimepath + "/opt/homebrew/bin/fzf"
 
 vim.opt.signcolumn = "yes"
 
-vim.cmd[[
-highlight Cursor guifg=white guibg=steelblue
-:set nocursorcolumn
-:set nocursorline
-:set guicursor=n-v-c:block-Cursor
-:set guicursor+=i:ver100-iCursor
-:set guicursor+=n-v-c:blinkon0
-:set guicursor+=i:blinkwait10
-]]
-
 -- misc
 vim.cmd [[
 let g:AutoPairsFlyMode = 0
