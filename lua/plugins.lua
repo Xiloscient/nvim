@@ -6,7 +6,6 @@ require('lazy').setup({
     "ellisonleao/gruvbox.nvim",
     "catppuccin/nvim",
     'nvim-lualine/lualine.nvim',
-    'hiphish/rainbow-delimiters.nvim',
 
     ------------------ editor -----------------
     'junegunn/fzf', --fuzzy search
@@ -23,27 +22,45 @@ require('lazy').setup({
     {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
 
     {
-        'hrsh7th/nvim-cmp', event = "InsertEnter",
-        dependencies = {
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-path',
-            'hrsh7th/cmp-cmdline',
-            'hrsh7th/cmp-vsnip',
-            'hrsh7th/vim-vsnip', --snippet support,
-            'hrsh7th/vim-vsnip-integ', --snippet support
-            'zbirenbaum/copilot.lua',
-            'zbirenbaum/copilot-cmp',
-        }
+      'saghen/blink.cmp',
+      dependencies = { 'rafamadriz/friendly-snippets' },
+
+      version = '1.*',
+
+      ---@module 'blink.cmp'
+      ---@type blink.cmp.Config
+      opts = {
+        -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
+        -- 'super-tab' for mappings similar to vscode (tab to accept)
+        -- 'enter' for enter to accept
+        -- 'none' for no mappings
+        --
+        -- All presets have the following mappings:
+        -- C-space: Open menu or open docs if already open
+        -- C-n/C-p or Up/Down: Select next/previous item
+        -- C-e: Hide menu
+        -- C-k: Toggle signature help (if signature.enabled = true)
+        --
+        -- See :h blink-cmp-config-keymap for defining your own keymap
+        keymap = { preset = 'enter' },
+
+        appearance = { nerd_font_variant = 'mono' },
+
+        completion = { documentation = { auto_show = true } },
+
+        sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
+
+        fuzzy = { implementation = "prefer_rust_with_warning" }
+      },
+
+      opts_extend = { "sources.default" }
     },
 
     'rust-lang/rust.vim',
-    {'kaarmu/typst.vim', ft = 'typst', lazy=false},
 
     ------------------ qol ------------------
     'tpope/vim-surround',   -- better surrounding chars
     'tpope/vim-commentary', -- comment/uncomment
-    "Xiloscient/snippets",
     --'folke/flash.nvim',
 
     'ntpeters/vim-better-whitespace', -- whitespace cleanup

@@ -1,23 +1,35 @@
-local M = {}
+-- Set <Space> as leader
+vim.g.mapleader = " "
+local opts = { noremap = true, silent = true }
 
-local function bind(op, outer_opts)
-    outer_opts = outer_opts or {noremap = true}
-    return function(lhs, rhs, opts)
-        opts = vim.tbl_extend("force",
-            outer_opts,
-            opts or {}
-        )
-        vim.keymap.set(op, lhs, rhs, opts)
-    end
-end
+-- Delete without yanking
+vim.keymap.set("n", "x", '"_x', opts)
+vim.keymap.set("n", "X", '"_X', opts)
+vim.keymap.set("n", "<Del>", '"_x', opts)
 
-M.nmap = bind("n", {noremap = false})
-M.vmap = bind("v", {noremap = false})
-M.xmap = bind("x", {noremap = false})
-M.imap = bind("i", {noremap = false})
-M.nnoremap = bind("n")
-M.vnoremap = bind("v")
-M.xnoremap = bind("x")
-M.inoremap = bind("i")
+-- Disable certain keys
+vim.keymap.set("n", "<SPACE>", "<Nop>", opts)
+vim.keymap.set("n", "<C-z>", "<Nop>", opts)
+vim.keymap.set("n", "<C-f>", "<Nop>", opts)
 
-return M
+-- Tagbar toggle
+vim.keymap.set("n", "<leader>*", ":TagbarToggle<CR>", opts)
+
+-- File navigation
+vim.keymap.set("n", "<leader>f", ":NvimTreeFindFileToggle<CR>", opts)
+vim.keymap.set("n", "<C-f>", ":Files<CR>", opts)
+vim.keymap.set("n", "<C-g>", ":Rg<CR>", opts)
+vim.keymap.set("n", "<leader>/", ":Lines<CR>", opts)
+vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", opts)
+
+
+-- Vimux toggle pane
+vim.keymap.set("n", "<leader>t", ":VimuxTogglePane<CR>", opts)
+
+-- Insert mode arrow controls
+vim.keymap.set("i", "<C-h>", "<Left>", opts)
+vim.keymap.set("i", "<C-j>", "<Down>", opts)
+vim.keymap.set("i", "<C-k>", "<Up>", opts)
+vim.keymap.set("i", "<C-l>", "<Right>", opts)
+vim.keymap.set("i", "jk", "<Esc>", opts)
+
