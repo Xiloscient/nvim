@@ -5,13 +5,25 @@ require('lazy').setup({
     ------------------ visual stuff ------------------
     "ellisonleao/gruvbox.nvim",
     "catppuccin/nvim",
-    'nvim-lualine/lualine.nvim',
+    "rebelot/kanagawa.nvim",
+    "nvim-lualine/lualine.nvim",
+
 
     ------------------ editor -----------------
     'junegunn/fzf', --fuzzy search
-    'junegunn/fzf.vim',
+    {
+      "ibhagwan/fzf-lua",
+      -- optional for icon support
+      dependencies = { "nvim-tree/nvim-web-devicons" },
+      -- or if using mini.icons/mini.nvim
+      -- dependencies = { "nvim-mini/mini.icons" },
+      ---@module "fzf-lua"
+      ---@type fzf-lua.Config|{}
+      ---@diagnostics disable: missing-fields
+      opts = {}
+      ---@diagnostics enable: missing-fields
+    },
 
-    'preservim/vimux', --tmux support
     'nvim-tree/nvim-tree.lua', --file tree
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
@@ -30,26 +42,9 @@ require('lazy').setup({
       ---@module 'blink.cmp'
       ---@type blink.cmp.Config
       opts = {
-        -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
-        -- 'super-tab' for mappings similar to vscode (tab to accept)
-        -- 'enter' for enter to accept
-        -- 'none' for no mappings
-        --
-        -- All presets have the following mappings:
-        -- C-space: Open menu or open docs if already open
-        -- C-n/C-p or Up/Down: Select next/previous item
-        -- C-e: Hide menu
-        -- C-k: Toggle signature help (if signature.enabled = true)
-        --
-        -- See :h blink-cmp-config-keymap for defining your own keymap
-        keymap = { preset = 'enter' },
-
         appearance = { nerd_font_variant = 'mono' },
-
         completion = { documentation = { auto_show = true } },
-
         sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
-
         fuzzy = { implementation = "prefer_rust_with_warning" }
       },
 
@@ -65,8 +60,6 @@ require('lazy').setup({
 
     'ntpeters/vim-better-whitespace', -- whitespace cleanup
     'windwp/nvim-autopairs', --bracket pair generation
-
-    'preservim/tagbar',
 
     ------------------ git ------------------
     "kdheepak/lazygit.nvim",

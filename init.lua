@@ -15,15 +15,16 @@ vim.opt.rtp:prepend(lazypath)
 require("plugins")
 require("setting")
 require("keymap")
-require("colorscheme")
 require("lsp")
+require("fzf")
+
+vim.cmd("colorscheme kanagawa-wave")
 
 require'nvim-treesitter.configs'.setup { highlight = { enable = true }, indent = { enable = true } }
-require('lualine').setup{ options = { theme = 'gruvbox_dark', icons_enabled = true} }
+require('statusline')
+require('nvim-tree').setup()
 
 require('nvim-autopairs').setup()
 
-require("nvim-tree").setup()
 require('gitsigns').setup()
 require("ibl").setup()
-

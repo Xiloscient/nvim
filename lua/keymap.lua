@@ -17,14 +17,12 @@ vim.keymap.set("n", "<leader>*", ":TagbarToggle<CR>", opts)
 
 -- File navigation
 vim.keymap.set("n", "<leader>f", ":NvimTreeFindFileToggle<CR>", opts)
-vim.keymap.set("n", "<C-f>", ":Files<CR>", opts)
-vim.keymap.set("n", "<C-g>", ":Rg<CR>", opts)
-vim.keymap.set("n", "<leader>/", ":Lines<CR>", opts)
+vim.keymap.set("n", "<C-f>", ":FzfLua files<CR>", opts)
+vim.keymap.set("n", "<C-g>", ":FzfLua grep_project<CR>", opts)
+vim.keymap.set("n", "<leader>/", ":FzfLua lines<CR>", opts)
+vim.keymap.set("n", "<leader>o", ":FzfLua loclist<CR>", opts)
 vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", opts)
 
-
--- Vimux toggle pane
-vim.keymap.set("n", "<leader>t", ":VimuxTogglePane<CR>", opts)
 
 -- Insert mode arrow controls
 vim.keymap.set("i", "<C-h>", "<Left>", opts)
