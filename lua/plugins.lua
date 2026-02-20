@@ -1,14 +1,11 @@
 require('lazy').setup({
 
-    "nvim-lua/plenary.nvim",
-
     ------------------ visual stuff ------------------
     "ellisonleao/gruvbox.nvim",
     "nvim-lualine/lualine.nvim",
 
 
     ------------------ editor -----------------
-    'junegunn/fzf', --fuzzy search
     "ibhagwan/fzf-lua",
 
     'nvim-tree/nvim-tree.lua', --file tree
@@ -42,8 +39,6 @@ require('lazy').setup({
     ------------------ qol ------------------
     'tpope/vim-surround',   -- better surrounding chars
     'tpope/vim-commentary', -- comment/uncomment
-    --'folke/flash.nvim',
-
     'ntpeters/vim-better-whitespace', -- whitespace cleanup
     'windwp/nvim-autopairs', --bracket pair generation
 

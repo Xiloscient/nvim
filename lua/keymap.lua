@@ -10,7 +10,6 @@ vim.keymap.set("n", "<Del>", '"_x', opts)
 -- Disable certain keys
 vim.keymap.set("n", "<SPACE>", "<Nop>", opts)
 vim.keymap.set("n", "<C-z>", "<Nop>", opts)
-vim.keymap.set("n", "<C-f>", "<Nop>", opts)
 
 -- File navigation
 vim.keymap.set("n", "<leader>f", ":NvimTreeFindFileToggle<CR>", opts)
