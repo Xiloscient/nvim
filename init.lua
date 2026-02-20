@@ -16,7 +16,8 @@ require("plugins")
 require("setting")
 require("keymap")
 require("lsp")
-require("colorscheme")
+require("gruvbox").setup({ contrast = "hard", transparent_mode = true })
+vim.cmd("colorscheme gruvbox")
 
 require'nvim-treesitter.configs'.setup { highlight = { enable = true }, indent = { enable = true } }
 require('lualine').setup({ options = { theme = 'gruvbox', icons_enabled = false } })
