@@ -4,25 +4,12 @@ require('lazy').setup({
 
     ------------------ visual stuff ------------------
     "ellisonleao/gruvbox.nvim",
-    "catppuccin/nvim",
-    "rebelot/kanagawa.nvim",
     "nvim-lualine/lualine.nvim",
 
 
     ------------------ editor -----------------
     'junegunn/fzf', --fuzzy search
-    {
-      "ibhagwan/fzf-lua",
-      -- optional for icon support
-      dependencies = { "nvim-tree/nvim-web-devicons" },
-      -- or if using mini.icons/mini.nvim
-      -- dependencies = { "nvim-mini/mini.icons" },
-      ---@module "fzf-lua"
-      ---@type fzf-lua.Config|{}
-      ---@diagnostics disable: missing-fields
-      opts = {}
-      ---@diagnostics enable: missing-fields
-    },
+    "ibhagwan/fzf-lua",
 
     'nvim-tree/nvim-tree.lua', --file tree
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
@@ -42,7 +29,6 @@ require('lazy').setup({
       ---@module 'blink.cmp'
       ---@type blink.cmp.Config
       opts = {
-        appearance = { nerd_font_variant = 'mono' },
         completion = { documentation = { auto_show = true } },
         sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
         fuzzy = { implementation = "prefer_rust_with_warning" }

@@ -16,13 +16,17 @@ require("plugins")
 require("setting")
 require("keymap")
 require("lsp")
-require("fzf")
-
-vim.cmd("colorscheme kanagawa-wave")
+require("colorscheme")
 
 require'nvim-treesitter.configs'.setup { highlight = { enable = true }, indent = { enable = true } }
-require('statusline')
-require('nvim-tree').setup()
+require('lualine').setup({ options = { theme = 'gruvbox', icons_enabled = false } })
+require('nvim-tree').setup({
+  renderer = {
+    icons = {
+      show = { file = false, folder = false, folder_arrow = false, git = false },
+    },
+  },
+})
 
 require('nvim-autopairs').setup()
 

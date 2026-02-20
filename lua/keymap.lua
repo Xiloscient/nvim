@@ -12,9 +12,6 @@ vim.keymap.set("n", "<SPACE>", "<Nop>", opts)
 vim.keymap.set("n", "<C-z>", "<Nop>", opts)
 vim.keymap.set("n", "<C-f>", "<Nop>", opts)
 
--- Tagbar toggle
-vim.keymap.set("n", "<leader>*", ":TagbarToggle<CR>", opts)
-
 -- File navigation
 vim.keymap.set("n", "<leader>f", ":NvimTreeFindFileToggle<CR>", opts)
 vim.keymap.set("n", "<C-f>", ":FzfLua files<CR>", opts)
